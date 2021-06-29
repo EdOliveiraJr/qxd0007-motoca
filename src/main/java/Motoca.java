@@ -4,12 +4,14 @@ public class Motoca {
     private int potencia;
     private int tempo = 0;
     private int tempoComprado = 0;
+    private String buzina = "";
     ArrayList <Pessoa> pessoaNaMoto = new ArrayList<>();
     
             
     public Motoca(int potencia){
         this.potencia = potencia;
         System.out.println("Criou motoca!!");
+        
     }
 
     public Pessoa getPessoa() {
@@ -86,6 +88,21 @@ public class Motoca {
     }
 
     public String buzinar(){
-        return null;
+        int x = getPotencia();
+        if(pessoaNaMoto.isEmpty()){
+            System.out.println("Fantasma não buzina! " 
+                                + "Alguém tem que estar " 
+                                + "na moto para buzinar!");
+            return buzina;
+        }else{
+            buzina = "P";
+            for (int i = 0; i < x; i++) {
+                buzina += "e";
+            }
+            buzina += "m";
+            System.out.println("Você buzinou " + buzina +"!");
+            return buzina;
+        }
+        
     }
 }
